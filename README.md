@@ -1,4 +1,4 @@
-# Burne
+# BurnE
 
 Burne is Reflective File Download(RFD) vulnerability detection tool written in Java
 

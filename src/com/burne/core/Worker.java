@@ -79,8 +79,6 @@ public class Worker implements Runnable {
 									if (isSameDomain(candidate)&&!visited.containsKey(candidate)) {
 										System.out.println("\nTesting Link " + m.group(1));
 										visited.put(candidate, true);
-									//	linked();
-									//	System.out.println("Tested "+counter);
 										boolean isVulnerable = checkForRFD(getResponse(candidate));
 										if (isVulnerable) {
 											System.out.println("\t---------------");
@@ -95,8 +93,6 @@ public class Worker implements Runnable {
 									if (isSameDomain(candidate)&&!visited.containsKey(candidate)) {
 										System.out.println("\nTesting Link " + m.group(1) + " --> " + candidate );
 										visited.put(candidate, true);
-									//	linked();
-									//	System.out.println("Tested "+counter);
 										boolean isVulnerable = checkForRFD(getResponse(candidate));
 										if (isVulnerable) {
 											System.out.println("\t---------------");
@@ -118,7 +114,6 @@ public class Worker implements Runnable {
 			}
 
 			for (Element element : links) {
-				// System.out.println("in for "+url);
 
 				link = element.attr("abs:href");
 				if (null != link && !link.isEmpty() && !visited.containsKey(link)) {
@@ -138,8 +133,6 @@ public class Worker implements Runnable {
 						System.out.println("Added to Queue " + link + " " + queue.size());
 
 						testResponse = getResponse(link);
-				//		linked();
-					//	System.out.println("Tested "+counter);
 						boolean isVulnerable = checkForRFD(testResponse);
 						if (isVulnerable) {
 							System.out.println("\t---------------");
